@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes>
+	<vType id="ArterialCar" length="4.0" accel="4.0" decel="5.0" maxSpeed="13.88"/>
+	<vType id="SideCar" length="4.0" accel="4.0" decel="5.0" maxSpeed="13.88"/>
+	<vType id="ArterialEmergency" vClass="emergency" length="8.5" accel="3.5" decel="4.0" maxSpeed="16.88"/>
+
+
+	<!--幹道車-->
+	<flow id="Arterial_EB" type="ArterialCar" beg="0" end="7200" vehsPerHour="450" color="1,1,0" from="C1C2" />
+	<flow id="Arterial_WB" type="ArterialCar" beg="0" end="7200" vehsPerHour="540" color="1,1,0" from="C6C5" />
+	<flow id="Emg_vehicle" type="ArterialEmergency" beg="0" end="7200" period="600" color="1,1,1" departLane="1">
+		<route edges="C1C2 C2C3 C3C4 C4C5 C5C6"/>
+	</flow>
+
+	<!--支道車-->
+	<flow id="SideCar_NB_1" type="SideCar" beg="0" end="7200" vehsPerHour="450" color="1,1,0" from="S1C2" />
+	<flow id="SideCar_NB_2" type="SideCar" beg="0" end="7200" vehsPerHour="338" color="1,1,0" from="S2C3" />
+	<flow id="SideCar_NB_3" type="SideCar" beg="0" end="7200" vehsPerHour="525" color="1,1,0" from="S3C4" />
+	<flow id="SideCar_NB_4" type="SideCar" beg="0" end="7200" vehsPerHour="360" color="1,1,0" from="S4C5" />
+
+	<flow id="SideCar_SB_4" type="SideCar" beg="0" end="7200" vehsPerHour="360" color="1,1,0" from="N4C5" />
+	<flow id="SideCar_SB_3" type="SideCar" beg="0" end="7200" vehsPerHour="525" color="1,1,0" from="N3C4" />
+	<flow id="SideCar_SB_2" type="SideCar" beg="0" end="7200" vehsPerHour="338" color="1,1,0" from="N2C3" />
+	<flow id="SideCar_SB_1" type="SideCar" beg="0" end="7200" vehsPerHour="450" color="1,1,0" from="N1C2" />
+
+
+</routes>

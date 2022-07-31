@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes>
+	<vType id="Auto" length="4.0" accel="2.9" decel="7.5" speedFactor="1.0" jmDriveAfterRedTime	= "0"/>
+	<vType id="Bus" vClass="bus" length="8.5" accel="1.2" decel="4.0" speedFactor="1.1" minGap="3.0" jmDriveAfterRedTime = "0"/>
+
+	<!--幹道車-->
+	<flow id="Phase1THR_flow" type="Auto" beg="0" end="7500" vehsPerHour="453" color="1,1,0" from="N1E2" to="E4C4" departLane="0"/>
+	<flow id="Phase1Right_flow" type="Auto" beg="0" end="7500" vehsPerHour="164" color="1,1,0" from="N1E2" to="E1C1" departLane="0"/>
+
+	<flow id="Phase2_flow" type="Auto" beg="0" end="7500" vehsPerHour="149" color="1,1,0" from="C4E4" to="E1C1" departLane="1"/>
+	
+	<flow id="Phase3THR_flow" type="Auto" beg="0" end="7500" vehsPerHour="687" color="1,1,0" from="C1E1" to="E3J2" departLane="0"/>
+	<flow id="Phase3Right_flow" type="Auto" beg="0" end="7500" vehsPerHour="51" color="1,1,0" from="C1E1" to="E4C4" departLane="0"/>
+
+	<flow id="Phase4_flow" type="Auto" beg="0" end="7500" vehsPerHour="235" color="1,1,0" from="J2E3" to="E4C4" departLane="1"/>
+	
+	<flow id="Phase5THR_flow" type="Auto" beg="0" end="7500" vehsPerHour="671" color="1,1,0" from="C4E4" to="E2N1" departLane="0"/>	
+	<flow id="Phase5Right_flow" type="Auto" beg="0" end="7500" vehsPerHour="201" color="1,1,0" from="C4E4" to="E3J2" departLane="0"/>	
+
+	<flow id="Phase6_flow" type="Auto" beg="0" end="7500" vehsPerHour="116" color="1,1,0" from="N1E2" to="E3J2" departLane="1"/>
+	
+	<flow id="Phase7THR_flow" type="Auto" beg="0" end="7500" vehsPerHour="647" color="1,1,0" from="J2E3" to="E1C1" departLane="0"/>
+	<flow id="Phase7Right_flow" type="Auto" beg="0" end="7500" vehsPerHour="38" color="1,1,0" from="J2E3" to="E2N1" departLane="0"/>
+	
+	<flow id="Phase8_flow" type="Auto" beg="0" end="7500" vehsPerHour="251" color="1,1,0" from="C1E1" to="E2N1" departLane="1"/>
+	
+	<flow id="Bus_East" type="Bus" begin="0" end="7500" period="100" color="1,1,1" departLane="0" departSpeed = "random">
+		<route edges="C1E1 E1I1 I1E3 E3J2"/>
+	</flow>
+	
+	
+	<flow id="Bus_North" type="Bus" begin="0" end="7500" period="110" color="1,1,1" departLane="0" departSpeed = "random">
+		<route edges="C4E4 E4I1 I1E3 E3J2"/> 
+	</flow> 
+	
+	
+	<!--
+	<flow id="Bus_North_20_1" type="Bus" begin="0" end="7500" period="1720" color="1,1,1" departLane="0" departSpeed = "random">
+		<route edges="C4E4 E4I1 I1E3 E3J2"/> 
+	</flow> 
+	
+	<flow id="Bus_West_20_2" type="Bus" begin="0" end="7500" period="1800" color="1,1,1" departLane="0" departSpeed = "random">
+		<route edges="J2E3 E3I1 I1E4 E4C4"/>
+	</flow> 
+	
+	<flow id="Bus_North_15_1" type="Bus" begin="0" end="7500" period="1200" color="1,1,1" departLane="0" departSpeed = "random">
+		<route edges="C4E4 E4I1 I1E2 E2N1"/>
+	</flow> 
+	
+	<flow id="Bus_South_15_2" type="Bus" begin="0" end="7500" period="1100" color="1,1,1" departLane="0" departSpeed = "random">
+		<route edges="N1E2 E2I1 I1E4 E4C4"/>
+	</flow>
+	
+	<flow id="Bus_North_H62_1" type="Bus" begin="0" end="7500" period="1500" color="1,1,1" departLane="0" departSpeed = "random">
+		<route edges="C4E4 E4I1 I1E2 E2N1"/>
+	</flow> 
+	
+	<flow id="Bus_South_H62_2" type="Bus" begin="0" end="7500" period="1470" color="1,1,1" departLane="0" departSpeed = "random">
+		<route edges="N1E2 E2I1 I1E4 E4C4"/>
+	</flow>
+	
+	<flow id="Bus_East_2_1" type="Bus" begin="0" end="7500" period="900" color="1,1,1" departLane="0" departSpeed = "random">
+		<route edges="C1E1 E1I1 I1E3 E3J2"/>
+	</flow>
+	
+	<flow id="Bus_West_2_2" type="Bus" begin="0" end="7500" period="950" color="1,1,1" departLane="0" departSpeed = "random">
+		<route edges="J2E3 E3I1 I1E1 E1C1"/>
+	</flow>
+
+	<flow id="Bus_East_19_1" type="Bus" begin="0" end="7500" period="1200" color="1,1,1" departLane="0" departSpeed = "random">
+		<route edges="C1E1 E1I1 I1E3 E3J2"/>
+	</flow>
+	
+	<flow id="Bus_West_19_2" type="Bus" begin="0" end="7500" period="1200" color="1,1,1" departLane="0" departSpeed = "random">
+		<route edges="J2E3 E3I1 I1E1 E1C1"/>
+	</flow>
+	
+	<flow id="Bus_East_G17_1" type="Bus" begin="0" end="7500" period="1820" color="1,1,1" departLane="0" departSpeed = "random">
+		<route edges="C1E1 E1I1 I1E3 E3J2"/>
+	</flow>
+	
+	<flow id="Bus_West_G17_2" type="Bus" begin="0" end="7500" period="1800" color="1,1,1" departLane="0" departSpeed = "random">
+		<route edges="J2E3 E3I1 I1E1 E1C1"/>
+	</flow>
+	
+	<flow id="Bus_East_O12_1" type="Bus" begin="0" end="7500" period="3553" color="1,1,1" departLane="1" departSpeed = "random">
+		<route edges="C1E1 E1I1 I1E2 E2N1"/>
+	</flow>
+	
+	<flow id="Bus_South_O12_2" type="Bus" begin="0" end="7500" period="3600" color="1,1,1" departLane="0" departSpeed = "random">
+		<route edges="N1E2 E2I1 I1E1 E1C1"/>
+	</flow> -->
+	
+</routes>

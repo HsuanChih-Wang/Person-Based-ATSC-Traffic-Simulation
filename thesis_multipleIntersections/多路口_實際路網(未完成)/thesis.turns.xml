@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<edgeRelations>
+   <interval begin="0" end="7500">
+   
+	  <!-- I1_West to East -->
+      <edgeRelation from="E1I1" to="I1E2" probability="0.05"/> <!-- Left -->
+	  <edgeRelation from="E1I1" to="I1E3" probability="0.85"/> <!-- Thr -->
+	  <edgeRelation from="E1I1" to="I1E4" probability="0.15"/> <!-- Right -->
+	  
+	  <!-- I1_East to West -->
+	  <edgeRelation from="E3I1" to="I1E4" probability="0.05"/> <!-- Left -->
+	  <edgeRelation from="E3I1" to="I1E1" probability="0.85"/> <!-- Thr -->
+	  <edgeRelation from="E3I1" to="I1E2" probability="0.15"/> <!-- Right -->
+	  
+	  <!-- I1_North to South -->
+	  <edgeRelation from="E2I1" to="I1E3" probability="0.05"/> <!-- Left -->
+	  <edgeRelation from="E2I1" to="I1E4" probability="0.85"/> <!-- Thr -->
+	  <edgeRelation from="E2I1" to="I1E1" probability="0.15"/> <!-- Right -->
+	  
+	  <!-- I1_South to Notth -->
+	  <edgeRelation from="E4I1" to="I1E1" probability="0.05"/> <!-- Left -->
+	  <edgeRelation from="E4I1" to="I1E2" probability="0.85"/> <!-- Thr -->
+	  <edgeRelation from="E4I1" to="I1E3" probability="0.15"/> <!-- Right -->
+	  
+	  <!-- I2_West to East -->
+	  <edgeRelation from="E5I2" to="I2E6" probability="0.9"/> 
+	  <edgeRelation from="E5I2" to="I2N2" probability="0.1"/> 
+	  
+	  <!-- I2_East to West -->
+	  <edgeRelation from="E6I2" to="I2E5" probability="0.95"/> 
+	  <edgeRelation from="E6I2" to="I2N2" probability="0.05"/> 
+	  
+	  <!-- I2_North to South -->
+	  <edgeRelation from="N2I2" to="I2E5" probability="0.65"/> <!-- Left -->
+	  <edgeRelation from="N2I2" to="I2E6" probability="0.35"/> <!-- Right -->
+	
+	  
+   </interval>
+   
+   <sink edges="I2E6"/>
+   <sink edges="E6I2"/>
+   <sink edges="I2N2"/>
+   <sink edges="N2I2"/>
+   <sink edges="C4E4"/>
+   <sink edges="E4C4"/>
+   <sink edges="N1E2"/>
+   <sink edges="E2N1"/>
+   <sink edges="C1E1"/>
+   <sink edges="E1C1"/>
+
+</edgeRelations>

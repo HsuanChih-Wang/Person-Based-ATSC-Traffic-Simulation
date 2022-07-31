@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes>
+	<vType id="Auto" length="4.0" accel="4.0" decel="5.0" maxSpeed="16.88"/>
+	<vType id="Bus" vClass="bus" length="8.5" accel="3.5" decel="4.0" maxSpeed="20"/>
+
+	<!--幹道車-->
+	<flow id="Phase1THR_flow" type="Auto" beg="0" end="7200" vehsPerHour="300" color="1,1,0" from="N1E2" to="E4C4"/>
+	<flow id="Phase1Right_flow" type="Auto" beg="0" end="7200" vehsPerHour="81" color="1,1,0" from="N1E2" to="E1C1"/>
+
+	<flow id="Phase2_flow" type="Auto" beg="0" end="7200" vehsPerHour="90" color="1,1,0" from="C4E4" to="E1C1"/>
+	
+	<flow id="Phase3THR_flow" type="Auto" beg="0" end="7200" vehsPerHour="500" color="1,1,0" from="C1E1" to="E3J2"/>
+	<flow id="Phase3Right_flow" type="Auto" beg="0" end="7200" vehsPerHour="116" color="1,1,0" from="C1E1" to="E4C4"/>
+
+	<flow id="Phase4_flow" type="Auto" beg="0" end="7200" vehsPerHour="112" color="1,1,0" from="J2E3" to="E4C4"/>
+	
+	<flow id="Phase5THR_flow" type="Auto" beg="0" end="7200" vehsPerHour="200" color="1,1,0" from="C4E4" to="E2N1"/>	
+	<flow id="Phase5Right_flow" type="Auto" beg="0" end="7200" vehsPerHour="80" color="1,1,0" from="C4E4" to="E3J2"/>	
+
+	<flow id="Phase6_flow" type="Auto" beg="0" end="7200" vehsPerHour="101" color="1,1,0" from="N1E2" to="E3J2"/>
+	
+	<flow id="Phase7THR_flow" type="Auto" beg="0" end="7200" vehsPerHour="600" color="1,1,0" from="J2E3" to="E1C1"/>
+	<flow id="Phase7Right_flow" type="Auto" beg="0" end="7200" vehsPerHour="184" color="1,1,0" from="J2E3" to="E2N1"/>
+	
+	<flow id="Phase8_flow" type="Auto" beg="0" end="7200" vehsPerHour="78" color="1,1,0" from="C1E1" to="E2N1"/>
+	
+	
+	<flow id="Bus_East" type="Bus" begin="0" end="7200" period="360" color="1,1,1" departLane="1">
+		<route edges="C1E1 E1I1 I1E3 E3J2"/>
+	</flow>
+	
+	<!--
+	<flow id="Bus_West" type="Bus" begin="0" end="7200" period="180" color="1,1,1" departLane="1">
+		<route edges="J2E3 E3I1 I1E1 E1C1"/>
+	</flow> -->
+
+	<!--
+	<flow id="Bus_North" type="Bus" begin="0" end="7200" period="180" color="1,1,1" departLane="1">
+		<route edges="C4E4 E4I1 I1E2 E2N1"/>
+	</flow> -->
+	
+
+</routes>

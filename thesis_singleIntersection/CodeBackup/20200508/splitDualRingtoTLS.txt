@@ -1,0 +1,95 @@
+def splitDualRingtoTLS(SignalPlan):
+    # 接受一個完整計畫內容:
+    # IntersectionSignal[路口編號][週期編號] = {"J1":J1(Phase物件, 以此類推), "J2":J2, "J3":J3, "J4":J4, "J5":J5, "J6":J6, "J7":J7, "J8":J8}
+
+    def splitRingTime(RING):
+        ringIndex = 0
+        combined_state_index = 0
+        if RING == 'ring1':
+            for item in ringSplitTime:
+                if (item < ring1[ringIndex]):
+                    combined_state[RING].append(ring1_state[ringIndex])
+                elif (item == ring1[ringIndex]):
+                    combined_state[RING].append(ring1_state[ringIndex])
+                    ringIndex = ringIndex + 1
+                else:
+                    ringIndex = ringIndex + 1
+                    combined_state[RING].append(ring1_state[ringIndex])
+        else:
+            for item in ringSplitTime:
+                if (item < ring2[ringIndex]):
+                    combined_state[RING].append(ring2_state[ringIndex])
+                elif (item == ring2[ringIndex]):
+                    combined_state[RING].append(ring2_state[ringIndex])
+                    ringIndex = ringIndex + 1
+                else:
+                    ringIndex = ringIndex + 1
+                    # print("ring2_state = ", ring2_state)
+                    # print("len  = ",len(ring2_state))
+                    # print("ringIndex = ", ringIndex)
+                    try:
+                        combined_state[RING].append(ring2_state[ringIndex])
+                    except IndexError as e:
+                        print("抓!PhaseObject 有IndexError例外錯誤! 記得內審完後來修我!")
+                        print(e)
+                        return True
+
+    ring1 = []
+    ring2 = []
+    for phase in SignalPlan:
+        if (phase in ['J1','J2','J3','J4']):
+            try:
+                phaseList = [SignalPlan[phase].green,
+                             SignalPlan[phase].yellow, SignalPlan[phase].allRed]
+                ring1.extend(phaseList)
+            except AttributeError as error:
+                print("ring1. Attribute Error")
+
+        else: #phase in J5 J6 J7 J8
+            try:
+                phaseList = [SignalPlan[phase].green,
+                             SignalPlan[phase].yellow, SignalPlan[phase].allRed]
+                ring2.extend(phaseList)
+            except AttributeError as error:
+                print("ring2. Attribute Error")
+
+    combined_state = {"ring1":[],"ring2":[]}
+    finalSignalPlan = {"state":[], "duration":[]}
+
+    for index in range(1,len(ring1)):
+        ring1[index] = ring1[index-1] + ring1[index]
+        ring2[index] = ring2[index-1] + ring2[index]
+
+    ringSplitTime = ring1+ring2
+    ringSplitTime.sort()
+    ringSplitTime = list(dict.fromkeys(ringSplitTime)) #去掉重複的
+
+    splitRingTime('ring1')
+    splitRingTime('ring2')
+
+    #將ring1和ring2 結果合併
+    for strIndex in range(len(ringSplitTime)):
+        tempStr = ""
+
+        if combined_state['ring1'][strIndex] != combined_state['ring2'][strIndex]:
+            for charIndex in range(20): #len(phaseIndex) = 20
+                if (combined_state['ring1'][strIndex][charIndex] !='r'):
+                    tempStr = tempStr + combined_state['ring1'][strIndex][charIndex]
+                elif (combined_state['ring2'][strIndex][charIndex] !='r'):
+                    tempStr = tempStr + combined_state['ring2'][strIndex][charIndex]
+                else:
+                    tempStr = tempStr + 'r'
+        else:
+            tempStr = combined_state['ring1'][strIndex]
+
+        finalSignalPlan['state'].append(tempStr) #將最終結果存入
+
+    for index in range(len(ringSplitTime)):
+        if (index > 0):
+            duration = ringSplitTime[index] - ringSplitTime[index-1]
+        else:
+            duration = ringSplitTime[index]
+        finalSignalPlan['duration'].append(duration)
+
+    # print("finalSignalPlan = ",finalSignalPlan)
+    return  finalSignalPlan

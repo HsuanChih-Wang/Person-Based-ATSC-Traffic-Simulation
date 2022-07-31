@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes>
+	<vType id="Auto" length="4.0" accel="2.9" decel="7.5" speedFactor="1.0" jmDriveAfterRedTime	= "0"/>
+	<vType id="Bus" vClass="bus" length="8.5" accel="1.2" decel="4.0" speedFactor="1.1" minGap="3.0" jmDriveAfterRedTime = "0"/>
+
+	<!--幹道車-->
+	
+	<flow id="XiaoDong_EB" type="Auto" beg="0" end="7500" vehsPerHour="989" color="1,1,0" from="C1E1" departLane="free"/>
+	<flow id="XiaoDong_WB" type="Auto" beg="0" end="7500" vehsPerHour="920" color="1,1,0" from="E6I2" departLane="free"/>
+	<flow id="ChungHua_NB" type="Auto" beg="0" end="7500" vehsPerHour="1021" color="1,1,0" from="C4E4" departLane="free"/>
+	<flow id="ChungHua_SB" type="Auto" beg="0" end="7500" vehsPerHour="733" color="1,1,0" from="N1E2" departLane="free"/>
+	
+	<flow id="ChungYi_SB" type="Auto" beg="0" end="7500" vehsPerHour="141" color="1,1,0" from="N2I2" departLane="free"/>
+	
+	<flow id="Bus_North_20_1" type="Bus" begin="0" end="7500" period="1720" color="1,1,1" departLane="0" departSpeed = "random">
+		<route edges="C4E4 E4I1 I1E3 E3E5 E5I2 I2E6"/> 
+	</flow> 
+	
+
+	
+</routes>

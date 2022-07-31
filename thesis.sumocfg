@@ -1,0 +1,11 @@
+<configuration>
+	<input>
+		<net-file value="thesis.net.xml"/>
+		<route-files value="thesis_0.5.rou.xml"/>
+		<additional-files value="thesis.add.xml"/>
+	</input>
+	<time>
+		<begin value="0"/>
+		<end value="7200"/>
+	</time>
+</configuration>
