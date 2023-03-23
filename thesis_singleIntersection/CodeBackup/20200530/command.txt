@@ -1,3 +1,0 @@
-duarouter -r "G:\My Drive\SUMO\0.Thesis\thesis_singleIntersection\thesis_single_0.3_flow.rou.xml" -n "G:\My Drive\SUMO\0.Thesis\thesis_singleIntersection\thesis_single.net.xml" -o "G:\My Drive\SUMO\0.Thesis\thesis_singleIntersection\thesis_single_0.3_vehcle.rou.xml"
-
-python "G:\My Drive\SUMO\0.Thesis\thesis_singleIntersection\Sumo_tools\tlsCycleAdaptation.py" -n "G:\My Drive\SUMO\0.Thesis\thesis_singleIntersection\thesis_single.net.xml" -r "G:\My Drive\SUMO\0.Thesis\thesis_singleIntersection\thesis_single_0.3_vehcle.rou.xml" -o "G:\My Drive\SUMO\0.Thesis\thesis_singleIntersection\new_thesis_single.add.xml"

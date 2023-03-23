@@ -1,31 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 05/06/20 13:24:03 by Eclipse SUMO GUI Version 1.5.0
+<!-- generated on 2022-09-04 19:52:04 by Eclipse SUMO GUI Version 1.11.0
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
 
     <input>
-        <net-file value="thesis_single.net.xml"/>
-        <route-files value="thesis_single_0.3_flow.rou.xml"/>
-        <additional-files value="thesis_single.add.xml"/>
+        <net-file value="thesis_single_500.net.xml"/>
+        <route-files value="thesis_single_peakHour_flow_vc0.9.rou.xml"/>
     </input>
 
     <output>
-        <tripinfo-output value="thesis_single_noPriority_tripInfo.xml"/>
+        <tripinfo-output value="thesis_single_priority_tripInfo.xml"/>
     </output>
 
     <time>
         <begin value="0"/>
-        <end value="7200"/>
+        <end value="7500"/>
     </time>
 
     <traci_server>
-        <remote-port value="63302"/>
+        <remote-port value="54079"/>
     </traci_server>
 
     <random_number>
-        <random value="true"/>
         <seed value="8"/>
     </random_number>
+
+    <gui_only>
+        <start value="true"/>
+    </gui_only>
 
 </configuration>
 -->

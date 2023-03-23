@@ -1,4 +1,0 @@
-<additional>
-   <inductionLoop id="01" lane="C1C2_0" pos="3"  file="NUL" freq="900" friendlyPos="false"/>
-   <inductionLoop id="02" lane="C1C2_1" pos="3"  file="NUL" freq="900" friendlyPos="false"/>
-</additional>   

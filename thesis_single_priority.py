@@ -5,12 +5,10 @@ import optparse
 
 
 #from thesis import PhaseObject
-from thesis import RSUObject
-from thesis import SignalPlanObject
-from thesis import OBUObject
-from thesis import SignalOptModule
-
-# C:\Users\WangRabbit\AppData\Local\Programs\Python\Python37\Lib\thesis
+from packages import RSUObject
+from packages import SignalPlanObject
+from packages import OBUObject
+from packages import SignalOptModule
 
 from scipy import stats
 
