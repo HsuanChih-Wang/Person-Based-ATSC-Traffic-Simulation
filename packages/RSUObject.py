@@ -250,7 +250,7 @@ class RSU:
                 startPoint = startPoint + cycle  # k+2週期targetPhase的起始時間 = (n) 紅燈結束
                 phaseTimeSplit.append(startPoint)
         else:  # 例外錯誤
-            print("例外錯誤:　targetPhase = ", targetPhase)
+            print("例外錯誤: targetPhase = ", targetPhase)
 
         return phaseTimeSplit, IsHeadPhase  # 回傳 [0] 時間分割點 [1] 是否為起頭時相
 
